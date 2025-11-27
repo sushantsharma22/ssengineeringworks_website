@@ -77,7 +77,7 @@ export default function Footer() {
                             <li className="flex items-start gap-3">
                                 <FaMapMarkerAlt className="text-secondary mt-1 flex-shrink-0" />
                                 <span className="text-sm">
-                                    Hamirpur Road, Near Bus Stand,<br />
+                                    Hamirpur Road, Near Old Bus Stand,<br />
                                     Una, Himachal Pradesh - 174303
                                 </span>
                             </li>
