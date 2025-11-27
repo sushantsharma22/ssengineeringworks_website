@@ -8,7 +8,7 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const timelineEvents = [
     { year: '1978', title: 'M.K Industries Founded', description: 'Started as the first comprehensive pumping machinery service provider in HP.' },
-    { year: '2001', title: 'SS Engineering Works', description: 'Established to expand reach across Una, Bilaspur, and Hamirpur.' },
+    { year: '2001', title: 'S.S. Engineering Works', description: 'Established to expand reach across Una, Bilaspur, and Hamirpur.' },
     { year: '2017', title: 'GST & MSME Certified', description: 'Formalized operations and expanded government contracts.' },
     { year: '2023', title: 'KSB Authorized Center', description: 'Became official service partner for KSB pumps.' },
     { year: '2025', title: 'Market Leader', description: 'Serving 6 districts with 500+ completed projects.' },
@@ -71,7 +71,7 @@ export default function AboutSection() {
                         </h2>
                         <p className="text-lg leading-relaxed" style={{ color: 'var(--dynamic-text-secondary)' }}>
                             M.K Industries was founded in 1978 as the first comprehensive pumping machinery service provider in Himachal Pradesh.
-                            In 2001, SS Engineering Works was established to carry forward this legacy, expanding our reach across
+                            In 2001, S.S. Engineering Works was established to carry forward this legacy, expanding our reach across
                             Una, Bilaspur, Hamirpur, Kangra, Shimla, and Solan districts.
                         </p>
                         <p className="text-lg leading-relaxed" style={{ color: 'var(--dynamic-text-secondary)' }}>

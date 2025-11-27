@@ -78,7 +78,7 @@ export default function Navbar() {
                 </div>
                 <div className="flex flex-col">
                     <span className="font-bold text-lg leading-tight" style={{ color: isHome ? 'var(--dynamic-text-primary)' : 'white' }}>
-                        SS Engineering
+                        S.S. Engineering
                     </span>
                     <span className="text-xs tracking-wider" style={{ color: isHome ? 'var(--dynamic-text-secondary)' : '#9ca3af' }}>
                         WORKS

@@ -16,7 +16,7 @@ export default function Footer() {
                             </div>
                             <div className="flex flex-col">
                                 <span className="text-white font-bold text-lg leading-tight">
-                                    SS Engineering
+                                    S.S. Engineering
                                 </span>
                                 <span className="text-gray-400 text-xs tracking-wider">
                                     WORKS
@@ -102,7 +102,7 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-xs text-gray-500">
-                        &copy; {currentYear} SS Engineering Works. All rights reserved.
+                        &copy; {currentYear} S.S. Engineering Works. All rights reserved.
                     </p>
                     <div className="flex gap-6">
                         <Link href="/privacy" className="text-xs text-gray-500 hover:text-white transition-colors">Privacy Policy</Link>

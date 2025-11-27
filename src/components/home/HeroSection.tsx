@@ -71,7 +71,7 @@ export default function HeroSection() {
                     </div>
 
                     <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight font-heading tracking-tight" style={{ color: 'var(--dynamic-text-primary)' }}>
-                        Expert <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400 animate-gradient-x">Pumping Solutions</span>
+                        Expert <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-700 via-teal-600 to-cyan-600 font-extrabold">Pumping Solutions</span>
                     </h1>
 
                     <p className="text-lg max-w-xl leading-relaxed border-l-4 border-blue-500/50 pl-6" style={{ color: 'var(--dynamic-text-secondary)' }}>

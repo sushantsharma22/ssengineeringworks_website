@@ -75,7 +75,7 @@ export default function WhyChooseUs() {
                     <span className="inline-block py-1 px-3 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-bold tracking-wider uppercase text-xs mb-4">
                         Our Advantage
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-bold font-heading" style={{ color: 'var(--dynamic-text-primary)' }}>Why Choose SS Engineering?</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold font-heading" style={{ color: 'var(--dynamic-text-primary)' }}>Why Choose S.S. Engineering?</h2>
                     <p className="mt-4 max-w-2xl mx-auto text-lg" style={{ color: 'var(--dynamic-text-secondary)' }}>
                         We combine decades of experience with modern technical expertise to deliver unmatched service quality.
                     </p>

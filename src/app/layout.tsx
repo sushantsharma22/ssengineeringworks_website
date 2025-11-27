@@ -11,7 +11,7 @@ const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  title: "SS Engineering Works | Expert Pumping Machinery Services",
+  title: "S.S. Engineering Works | Expert Pumping Machinery Services",
   description: "Authorized KSB Service Center providing comprehensive repair, installation, and maintenance for pumping machinery in Himachal Pradesh since 1978.",
 };
 
