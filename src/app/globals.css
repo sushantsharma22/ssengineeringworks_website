@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0F172A;
+  --color-secondary: #2563EB;
+  --color-accent: #F59E0B;
+  --color-success: #10B981;
+  --color-background: #F8FAFC;
+  --color-text: #1E293B;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
+
+  /* Dynamic Text Variables (Defaults for Night/Inner Pages) */
+  --dynamic-text-primary: #f8fafc;
+  --dynamic-text-secondary: #94a3b8;
+  --dynamic-accent: #38bdf8;
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
