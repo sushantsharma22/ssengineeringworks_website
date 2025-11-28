@@ -9,21 +9,21 @@ import { FaAward, FaCheckCircle, FaMapMarkerAlt, FaHandshake, FaBolt, FaUserCog 
 const features = [
     {
         title: 'Pioneer Status',
-        description: 'First comprehensive pumping machinery service provider in Himachal Pradesh since 1978.',
+        description: 'First comprehensive pumping machinery service provider in Himachal Pradesh since 1970.',
         icon: FaAward,
-        image: '/images/WhatsApp Image 2025-11-27 at 00.56.32.jpeg'
+        image: '/images/1764305046059~2.jpg'
     },
     {
         title: 'Government Approved',
         description: 'Empaneled service provider for Jal Shakti Vibhag and other government departments.',
         icon: FaCheckCircle,
-        image: '/images/WhatsApp Image 2025-11-27 at 00.56.33.jpeg'
+        image: '/images/1000146118.jpg'
     },
     {
         title: 'Wide Coverage',
-        description: 'Serving 6 districts: Una, Bilaspur, Hamirpur, Kangra, Shimla, and Solan.',
+        description: 'Serving 6+ districts: Una, Bilaspur, Hamirpur, Kangra, Shimla, and Solan.',
         icon: FaMapMarkerAlt,
-        image: '/images/WhatsApp Image 2025-11-27 at 00.56.34.jpeg'
+        image: '/images/1000146120.jpg'
     }
 ];
 
@@ -66,16 +66,16 @@ export default function WhyChooseUs() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="py-24 bg-transparent overflow-hidden relative">
+        <section ref={sectionRef} className="py-16 md:py-24 bg-transparent overflow-hidden relative">
             {/* Smooth Gradient Background - NO GRID */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-50/30 to-transparent" />
 
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
-                <div className="text-center mb-20">
+                <div className="text-center mb-16">
                     <span className="inline-block py-1.5 px-4 rounded-full bg-white/30 border border-white/40 text-slate-800 font-bold tracking-wider uppercase text-xs mb-4 backdrop-blur-sm shadow-sm">
-                        OUR ADVANTAGE
+                        Our Advantage
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-bold font-heading text-slate-900">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-slate-900">
                         Why Choose S.S. Engineering?
                     </h2>
                     <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-700">
@@ -93,7 +93,7 @@ export default function WhyChooseUs() {
                             {/* Image Side */}
                             <div className="w-full lg:w-1/2 relative group">
                                 <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500" />
-                                <div className="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900">
+                                <div className="relative h-[250px] md:h-[400px] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900">
                                     <div className="why-us-image w-full h-[120%] relative -top-[10%]">
                                         <Image
                                             src={feature.image}
@@ -121,7 +121,7 @@ export default function WhyChooseUs() {
                                     {index === 0 && (
                                         <>
                                             <li className="flex items-center gap-3 text-slate-700">
-                                                <FaCheckCircle className="text-emerald-500" /> 47 Years Combined Experience
+                                                <FaCheckCircle className="text-emerald-500" /> 55+ Years Combined Experience
                                             </li>
                                             <li className="flex items-center gap-3 text-slate-700">
                                                 <FaCheckCircle className="text-emerald-500" /> Established Legacy

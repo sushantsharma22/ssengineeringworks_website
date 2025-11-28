@@ -68,69 +68,82 @@ export default function Navbar() {
         return () => ctx.revert();
     }, [isHome]);
 
-    // Close mobile menu on route change
+    // Close mobile menu on route change & Lock Scroll
     useEffect(() => {
         setIsOpen(false);
     }, [pathname]);
 
-    return (
-        <nav
-            ref={navRef}
-            // Default classes (will be overridden by GSAP above)
-            className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 lg:px-12 transition-all duration-300"
-        >
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 z-50 group">
-                {/* Logo Box: Glass style to match the vibe */}
-                <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:bg-blue-600 transition-colors">
-                    SS
-                </div>
-                <div className="flex flex-col">
-                    <span className="font-bold text-lg leading-tight text-white drop-shadow-md">
-                        S.S. Engineering
-                    </span>
-                    <span className="text-xs tracking-wider text-blue-200">
-                        WORKS
-                    </span>
-                </div>
-            </Link>
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isOpen]);
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-8">
-                {navLinks.map((link) => (
-                    <Link
-                        key={link.name}
-                        href={link.href}
-                        className={`text-sm font-medium transition-all hover:-translate-y-0.5 ${pathname === link.href
+    return (
+        <>
+            <nav
+                ref={navRef}
+                // Default classes (will be overridden by GSAP above)
+                className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 lg:px-12 transition-all duration-300"
+            >
+                {/* Logo */}
+                <Link href="/" className="flex items-center gap-2 z-50 group">
+                    {/* Logo Box: Glass style to match the vibe */}
+                    <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:bg-blue-600 transition-colors">
+                        SS
+                    </div>
+                    <div className="flex flex-col">
+                        <span className="font-bold text-lg leading-tight text-white drop-shadow-md">
+                            S.S. Engineering
+                        </span>
+                        <span className="text-xs tracking-wider text-blue-200">
+                            WORKS
+                        </span>
+                    </div>
+                </Link>
+
+                {/* Desktop Navigation */}
+                <div className="hidden lg:flex items-center gap-8">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.name}
+                            href={link.href}
+                            className={`text-sm font-medium transition-all hover:-translate-y-0.5 ${pathname === link.href
                                 ? 'text-blue-400 drop-shadow-md'
                                 : 'text-white/80 hover:text-white hover:drop-shadow-md'
-                            }`}
+                                }`}
+                        >
+                            {link.name}
+                        </Link>
+                    ))}
+                </div>
+
+                {/* CTA Button */}
+                <div className="hidden lg:block">
+                    <Link
+                        href="/contact"
+                        // Button: Glass style, no border, blends with background
+                        className="px-6 py-2.5 bg-white/10 hover:bg-blue-600 text-white text-sm font-semibold rounded-full transition-all shadow-lg backdrop-blur-sm hover:scale-105"
                     >
-                        {link.name}
+                        Get Service Quote
                     </Link>
-                ))}
-            </div>
+                </div>
 
-            {/* CTA Button */}
-            <div className="hidden lg:block">
-                <Link
-                    href="/contact"
-                    // Button: Glass style, no border, blends with background
-                    className="px-6 py-2.5 bg-white/10 hover:bg-blue-600 text-white text-sm font-semibold rounded-full transition-all shadow-lg backdrop-blur-sm hover:scale-105"
+                {/* Mobile Menu Button */}
+                <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="lg:hidden text-2xl z-50 focus:outline-none text-white drop-shadow-md p-2.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 shadow-lg active:scale-95 transition-transform"
                 >
-                    Get Service Quote
-                </Link>
-            </div>
+                    {isOpen ? <HiX /> : <HiMenu />}
+                </button>
+            </nav>
 
-            {/* Mobile Menu Button */}
-            <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="lg:hidden text-2xl z-50 focus:outline-none text-white drop-shadow-md"
-            >
-                {isOpen ? <HiX /> : <HiMenu />}
-            </button>
-
-            {/* Mobile Menu Overlay */}
+            {/* Mobile Menu Overlay - MOVED OUTSIDE NAV TO AVOID CLIPPING */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -138,12 +151,20 @@ export default function Navbar() {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: '100%' }}
                         transition={{ type: 'tween', duration: 0.3 }}
-                        className="fixed inset-0 bg-slate-900/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 lg:hidden"
+                        className="fixed inset-0 bg-slate-900/95 backdrop-blur-xl z-[60] flex flex-col items-center justify-center gap-8 lg:hidden"
                     >
+                        {/* Close Button INSIDE Overlay */}
+                        <button
+                            onClick={() => setIsOpen(false)}
+                            className="absolute top-6 right-6 text-white p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                        >
+                            <HiX size={32} />
+                        </button>
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
                                 href={link.href}
+                                onClick={() => setIsOpen(false)}
                                 className={`text-2xl font-bold ${pathname === link.href ? 'text-blue-400' : 'text-white hover:text-blue-400'
                                     }`}
                             >
@@ -152,6 +173,7 @@ export default function Navbar() {
                         ))}
                         <Link
                             href="/contact"
+                            onClick={() => setIsOpen(false)}
                             className="mt-4 px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold rounded-full transition-all shadow-lg"
                         >
                             Get Service Quote
@@ -159,6 +181,6 @@ export default function Navbar() {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </nav>
+        </>
     );
 }

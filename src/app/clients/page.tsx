@@ -47,7 +47,6 @@ export default function ClientsPage() {
         <div className="min-h-screen pt-24 pb-20 bg-transparent relative overflow-hidden">
             {/* Background Gradients */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-950 to-slate-950" />
-            <div className="absolute inset-0 opacity-20 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
 
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
                 <div className="text-center mb-20">
@@ -82,7 +81,6 @@ export default function ClientsPage() {
 
                 {/* Sectors Section */}
                 <div className="mt-24 bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-12 text-center text-white relative overflow-hidden border border-white/10 shadow-2xl">
-                    <div className="absolute inset-0 opacity-20 bg-[url('/grid.svg')] bg-center" />
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-blue-500/10 blur-3xl" />
 
                     <div className="relative z-10">

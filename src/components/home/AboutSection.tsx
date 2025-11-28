@@ -7,11 +7,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const timelineEvents = [
-    { year: '1978', title: 'M.K Industries Founded', description: 'Started as the first comprehensive pumping machinery service provider in HP.' },
+    { year: '1970', title: 'M.K Industries Founded', description: 'Started as the first comprehensive pumping machinery service provider in HP.' },
     { year: '2001', title: 'S.S. Engineering Works', description: 'Established to expand reach across Una, Bilaspur, and Hamirpur.' },
     { year: '2017', title: 'GST & MSME Certified', description: 'Formalized operations and expanded government contracts.' },
-    { year: '2023', title: 'KSB Authorized Center', description: 'Became official service partner for KSB pumps.' },
-    { year: '2025', title: 'Market Leader', description: 'Serving 6 districts with 500+ completed projects.' },
+    { year: '2024', title: 'KSB Authorized Center', description: 'Became official service partner for KSB pumps.' },
+    { year: '2025', title: 'Market Leader', description: 'Serving 6+ districts with 500+ completed projects.' },
 ];
 
 export default function AboutSection() {
@@ -60,14 +60,16 @@ export default function AboutSection() {
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                     {/* Text Content */}
-                    <div className="space-y-8 sticky top-32">
+                    <div className="space-y-8 lg:sticky lg:top-32">
                         {/* Badge: Glass + Dark Text */}
-                        <div className="inline-block px-4 py-1.5 rounded-full bg-white/30 border border-white/40 text-slate-900 text-sm font-bold tracking-wide uppercase backdrop-blur-md shadow-sm">
-                            About Us
+                        <div className="flex justify-center lg:justify-start">
+                            <div className="inline-block px-4 py-1.5 rounded-full bg-white/30 border border-white/40 text-slate-900 text-sm font-bold tracking-wide uppercase backdrop-blur-md shadow-sm">
+                                About Us
+                            </div>
                         </div>
 
                         {/* Heading: Dark Text */}
-                        <h2 className="text-4xl lg:text-5xl font-bold font-heading leading-tight text-slate-900">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading leading-tight text-slate-900 text-center lg:text-left">
                             Building Trust Through <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-600 font-extrabold">
                                 Engineering Excellence
@@ -114,7 +116,7 @@ export default function AboutSection() {
                                         {/* GLASS CARD: White/20 bg + Blur + Dark Text */}
                                         <div className={`bg-white/20 backdrop-blur-xl p-6 rounded-xl border border-white/30 shadow-lg hover:bg-white/30 transition-all hover:shadow-xl ${index % 2 === 0 ? 'lg:text-right' : ''
                                             }`}>
-                                            <span className="text-4xl font-bold block mb-2 font-mono text-blue-700">
+                                            <span className="text-3xl md:text-4xl font-bold block mb-2 font-mono text-blue-700">
                                                 {event.year}
                                             </span>
                                             <h3 className="text-xl font-bold mb-2 text-slate-900">

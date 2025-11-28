@@ -234,7 +234,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 className="font-bold text-white mb-1">Email Address</h3>
-                                        <p className="text-slate-400">ssewuna123@gmail.com</p>
+                                        <p className="text-slate-400">ssewuna@gmail.com</p>
                                     </div>
                                 </div>
 
@@ -252,7 +252,7 @@ export default function ContactPage() {
 
                         <div className="bg-slate-900 p-2 rounded-2xl shadow-lg border border-white/10">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.565735431566!2d76.27108331510165!3d31.48113098138266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391adb1981800001%3A0xbf263495e513a576!2sUna%2C%20Himachal%20Pradesh!5e0!3m2!1sen!2sin!4v1625123456789!5m2!1sen!2sin"
+                                src="https://maps.google.com/maps?q=S.S.+Engineering+Works%2C+Near+Bus+Stand%2C+Hamirpur+Road%2C+Una%2C+Himachal+Pradesh&t=&z=15&ie=UTF8&iwloc=&output=embed"
                                 width="100%"
                                 height="300"
                                 style={{ border: 0, borderRadius: '1rem', filter: 'invert(90%) hue-rotate(180deg)' }}

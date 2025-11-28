@@ -32,11 +32,11 @@ export default function CTABanner() {
             ref={sectionRef}
             // FIX 1: Set bg-transparent so the global background shows through
             // FIX 2: Removed the absolute divs that were covering the background
-            className="py-24 text-white text-center relative overflow-hidden bg-transparent"
+            className="py-16 md:py-24 text-white text-center relative overflow-hidden bg-transparent"
         >
 
             <div className="container mx-auto px-6 relative z-10 cta-content">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading tracking-tight text-slate-900 dark:text-white">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-heading tracking-tight text-slate-900 dark:text-white">
                     Ready to Get <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Expert Pumping Service?</span>
                 </h2>
                 <p className="text-xl mb-10 max-w-2xl mx-auto text-slate-700 dark:text-slate-300 leading-relaxed">

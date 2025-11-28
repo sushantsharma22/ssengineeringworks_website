@@ -6,9 +6,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaCalendarAlt, FaUsers, FaMapMarkedAlt, FaBox } from 'react-icons/fa';
 
 const stats = [
-    { icon: FaCalendarAlt, value: 47, label: 'Years Experience', suffix: '+' },
+    { icon: FaCalendarAlt, value: 55, label: 'Years Experience', suffix: '+' },
     { icon: FaUsers, value: 14, label: 'Skilled Technicians', suffix: '+' },
-    { icon: FaMapMarkedAlt, value: 6, label: 'Districts Covered', suffix: '' },
+    { icon: FaMapMarkedAlt, value: 6, label: 'Districts Covered', suffix: '+' },
     { icon: FaBox, value: 25, label: 'Spare Parts Inventory', suffix: 'L+' },
 ];
 
@@ -68,7 +68,7 @@ export default function StatsCounter() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="py-20 bg-white/10 backdrop-blur-sm relative overflow-hidden border-y border-white/20">
+        <section ref={sectionRef} className="py-12 md:py-20 bg-white/10 backdrop-blur-sm relative overflow-hidden border-y border-white/20">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-5 bg-[url('/grid.svg')] bg-center" />
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-900/5 to-transparent" />
@@ -80,7 +80,7 @@ export default function StatsCounter() {
                             <div className="stat-icon w-16 h-16 mx-auto bg-slate-700/60 backdrop-blur-sm rounded-2xl flex items-center justify-center text-blue-400 mb-4 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-lg shadow-black/10 group-hover:shadow-blue-500/30 border border-slate-600/40 group-hover:border-blue-500/50 group-hover:-translate-y-2">
                                 <stat.icon size={32} />
                             </div>
-                            <div className="text-4xl md:text-5xl font-bold mb-2 font-heading text-slate-900">
+                            <div className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 font-heading text-slate-900">
                                 <span className="stat-number">0</span>
                                 {stat.suffix}
                             </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaTools, FaCogs, FaAward, FaClipboardCheck, FaBoxOpen, FaAmbulance, FaChevronDown } from 'react-icons/fa';
 
@@ -109,7 +109,7 @@ const services = [
                     We maintain a massive inventory of genuine spares to ensure rapid replacements.
                 </p>
                 <div className="flex items-center gap-4 bg-emerald-500/10 p-4 rounded-lg border border-emerald-500/20">
-                    <div className="text-3xl font-bold text-emerald-400">₹10L+</div>
+                    <div className="text-3xl font-bold text-emerald-400">₹25L+</div>
                     <div className="text-sm text-emerald-200/80">
                         Worth of inventory maintained in-stock for immediate dispatch.
                     </div>
@@ -143,12 +143,26 @@ const services = [
 export default function ServicesPage() {
     const [openId, setOpenId] = useState<string | null>('repair');
 
+    useEffect(() => {
+        // Check hash on mount to open correct section
+        if (typeof window !== 'undefined' && window.location.hash) {
+            const id = window.location.hash.replace('#', '');
+            setOpenId(id);
+            // Scroll to element
+            setTimeout(() => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 100);
+        }
+    }, []);
+
     return (
         <div className="min-h-screen pt-24 pb-20 bg-transparent relative overflow-hidden">
             {/* Background Gradients */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-950 to-slate-950" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-indigo-900/20 via-slate-950 to-slate-950" />
-            <div className="absolute inset-0 opacity-20 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
 
             {/* Header */}
             <div className="relative z-10 mb-12">
@@ -158,7 +172,7 @@ export default function ServicesPage() {
                     </h1>
                     <p className="text-xl text-slate-400 max-w-2xl mx-auto">
                         From repair to installation, we handle all your pumping equipment needs with
-                        47 years of proven expertise across Himachal Pradesh.
+                        55+ years of proven expertise across Himachal Pradesh.
                     </p>
                 </div>
             </div>
@@ -168,6 +182,7 @@ export default function ServicesPage() {
                     {services.map((service) => (
                         <motion.div
                             key={service.id}
+                            id={service.id}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5 }}

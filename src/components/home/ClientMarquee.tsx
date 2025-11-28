@@ -52,8 +52,7 @@ export default function ClientMarquee() {
             </div>
 
             <div ref={marqueeRef} className="relative w-full overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-950 to-transparent z-10" />
-                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-950 to-transparent z-10" />
+                {/* Removed gradient overlays as requested */}
 
                 <div ref={trackRef} className="flex gap-16 w-max px-8">
                     {/* Double the list for infinite loop effect */}
