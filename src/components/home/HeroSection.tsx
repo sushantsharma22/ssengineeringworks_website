@@ -15,7 +15,6 @@ export default function HeroSection() {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         const ctx = gsap.context(() => {
-            // Text Animation
             gsap.from(textRef.current?.children || [], {
                 y: 50,
                 opacity: 0,
@@ -25,16 +24,14 @@ export default function HeroSection() {
                 delay: 0.5,
             });
 
-            // Image Animation
             gsap.from(imageRef.current, {
-                x: 100,
                 opacity: 0,
-                duration: 1.5,
+                scale: 0.95,
+                duration: 1.2,
                 ease: 'power3.out',
-                delay: 0.2,
+                delay: 0.3,
             });
 
-            // Scroll Indicator
             gsap.to('.scroll-indicator', {
                 y: 10,
                 repeat: -1,
@@ -50,99 +47,108 @@ export default function HeroSection() {
     return (
         <section
             ref={heroRef}
-            className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-transparent"
+            className="relative min-h-screen flex items-center pt-20 overflow-hidden"
         >
-            {/* Background Gradients */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-950 to-slate-950" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-indigo-900/20 via-slate-950 to-slate-950" />
-
-            {/* Animated Grid Pattern */}
-            <div className="absolute inset-0 opacity-20 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
-
-            <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
                 {/* Text Content */}
-                <div ref={textRef} className="text-white space-y-8">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-sm font-medium backdrop-blur-sm">
+                <div ref={textRef} className="space-y-8">
+                    {/* Badge */}
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/40 backdrop-blur-xl border border-white/20 text-white text-sm font-medium shadow-lg">
                         <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
                         </span>
                         Pioneer Pumping Machinery Services Since 1978
                     </div>
 
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight font-heading tracking-tight" style={{ color: 'var(--dynamic-text-primary)' }}>
-                        Expert <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-700 via-teal-600 to-cyan-600 font-extrabold">Pumping Solutions</span>
+                    {/* Main Heading with 3D/Gradient Effect */}
+                    <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight drop-shadow-2xl">
+                        <span className="block text-white drop-shadow-md">Expert</span>
+                        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-400 drop-shadow-sm pb-2">
+                            Pumping
+                        </span>
+                        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-400 drop-shadow-sm pb-2">
+                            Solutions
+                        </span>
                     </h1>
 
-                    <p className="text-lg max-w-xl leading-relaxed border-l-4 border-blue-500/50 pl-6" style={{ color: 'var(--dynamic-text-secondary)' }}>
+                    <p className="text-xl text-white max-w-xl leading-relaxed font-light drop-shadow-md">
                         Authorized KSB Service Center with 47 years of excellence.
                         Serving 6 districts with 24/7 emergency support and ₹10L+ spare parts inventory.
                     </p>
 
+                    {/* Buttons */}
                     <div className="flex flex-wrap gap-4 pt-4">
                         <Link
                             href="/contact"
-                            className="group relative px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-all shadow-lg shadow-blue-500/25 overflow-hidden"
+                            className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold rounded-full transition-all shadow-lg shadow-cyan-900/20 hover:scale-[1.02] border border-white/10"
                         >
-                            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                            <span className="relative">Get Service Quote</span>
+                            Get Service Quote
                         </Link>
                         <Link
                             href="/coverage"
-                            className="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold rounded-xl transition-all backdrop-blur-sm hover:border-blue-500/30"
+                            className="px-8 py-4 bg-slate-900/40 hover:bg-slate-900/60 backdrop-blur-xl border border-white/20 hover:border-white/40 text-white font-semibold rounded-full transition-all shadow-lg"
                         >
                             View Coverage Areas
                         </Link>
                     </div>
 
-                    <div className="pt-8 flex items-center gap-8 text-sm font-mono border-t border-white/5 mt-8" style={{ color: 'var(--dynamic-text-secondary)' }}>
+                    {/* Stats Section - VISIBILITY FIXED HERE */}
+                    <div className="mt-8 bg-slate-900/30 backdrop-blur-md rounded-2xl p-6 border border-white/10 shadow-2xl flex items-center justify-between gap-6 max-w-lg">
                         <div>
-                            <span className="block text-3xl font-bold mb-1" style={{ color: 'var(--dynamic-text-primary)' }}>47+</span>
-                            Years Exp.
+                            <div className="text-4xl md:text-5xl font-bold text-white mb-1 drop-shadow-sm">47+</div>
+                            <div className="text-sm text-blue-200 font-medium tracking-wide uppercase">Years Exp.</div>
                         </div>
-                        <div className="w-px h-12 bg-white/10" />
+                        <div className="w-px h-12 bg-white/20" />
                         <div>
-                            <span className="block text-3xl font-bold mb-1" style={{ color: 'var(--dynamic-text-primary)' }}>12+</span>
-                            Technicians
+                            <div className="text-4xl md:text-5xl font-bold text-white mb-1 drop-shadow-sm">12+</div>
+                            <div className="text-sm text-blue-200 font-medium tracking-wide uppercase">Technicians</div>
                         </div>
-                        <div className="w-px h-12 bg-white/10" />
+                        <div className="w-px h-12 bg-white/20" />
                         <div>
-                            <span className="block text-3xl font-bold mb-1" style={{ color: 'var(--dynamic-text-primary)' }}>6</span>
-                            Districts
+                            <div className="text-4xl md:text-5xl font-bold text-white mb-1 drop-shadow-sm">6</div>
+                            <div className="text-sm text-blue-200 font-medium tracking-wide uppercase">Districts</div>
                         </div>
                     </div>
                 </div>
 
-                {/* Hero Image */}
-                <div ref={imageRef} className="relative hidden lg:block h-[600px] w-full perspective-1000">
-                    {/* Decorative Elements */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-[100px] animate-pulse" />
+                {/* Hero Image / Logo */}
+                <div ref={imageRef} className="relative hidden lg:flex items-center justify-center h-[650px]">
+                    {/* Subtle glow effect behind logo */}
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <div className="w-[400px] h-[400px] bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse" />
+                    </div>
 
-                    <div className="relative w-full h-full rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-black/50 bg-slate-900/50 backdrop-blur-sm transform rotate-y-12 hover:rotate-y-0 transition-transform duration-700">
+                    {/* Logo Image */}
+                    <div className="relative w-[500px] h-[500px]">
                         <Image
-                            src="/images/Gemini_Generated_Image_iz311hiz311hiz31.png"
-                            alt="Industrial Pumping Machinery"
+                            src="/images/1000146046.jpg"
+                            alt="S.S. Engineering Works"
                             fill
-                            className="object-cover"
+                            className="object-contain drop-shadow-2xl"
                             priority
                         />
+                    </div>
 
-                        {/* Floating Badge */}
-                        <div className="absolute bottom-8 left-8 bg-black/40 backdrop-blur-xl border border-white/10 p-6 rounded-2xl shadow-xl">
-                            <div className="flex items-center gap-3 mb-2">
-                                <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse" />
-                                <p className="font-bold text-sm tracking-wide uppercase" style={{ color: '#10b981' }}>Authorized Center</p>
+                    {/* Authorized Badge */}
+                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-slate-900/95 backdrop-blur-2xl border border-cyan-500/30 px-8 py-4 rounded-2xl shadow-2xl ring-1 ring-white/10">
+                        <div className="flex items-center gap-4">
+                            <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_10px_#22d3ee]" />
+                            <div>
+                                <div className="text-[10px] text-cyan-400 font-bold tracking-[0.2em] uppercase mb-1">
+                                    Authorized Center
+                                </div>
+                                <div className="text-lg font-bold text-white tracking-wide">KSB & Major Brands</div>
                             </div>
-                            <p className="text-lg font-bold" style={{ color: 'var(--dynamic-text-primary)' }}>KSB & Major Brands</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-500 flex flex-col items-center gap-2 scroll-indicator">
-                <span className="text-[10px] tracking-[0.2em] uppercase font-bold">Scroll to explore</span>
-                <FaArrowDown className="animate-bounce" />
+            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 scroll-indicator text-white/70 drop-shadow-md">
+                <span className="text-[10px] tracking-[0.3em] uppercase font-bold">Scroll to explore</span>
+                <FaArrowDown className="text-lg animate-bounce" />
             </div>
         </section>
     );

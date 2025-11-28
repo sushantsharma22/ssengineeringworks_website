@@ -66,7 +66,7 @@ export default function ServicesGrid() {
                 stagger: 0.1,
                 duration: 0.6,
                 ease: 'power2.out',
-                clearProps: 'transform,opacity' // Ensure it stays visible after animation
+                clearProps: 'transform,opacity'
             });
         }, sectionRef);
 
@@ -80,13 +80,13 @@ export default function ServicesGrid() {
 
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <span className="inline-block py-1 px-3 rounded-full bg-cyan-500/15 border border-cyan-400/40 text-cyan-600 font-bold tracking-wider uppercase text-xs mb-4 backdrop-blur-sm">
+                    <span className="inline-block py-1.5 px-4 rounded-full bg-white/30 border border-white/40 text-slate-800 font-bold tracking-wider uppercase text-xs mb-4 backdrop-blur-sm shadow-sm">
                         Our Expertise
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading tracking-tight" style={{ color: 'var(--dynamic-text-primary)' }}>
-                        Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-700 via-teal-600 to-cyan-600 font-extrabold">Pumping Solutions</span>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading tracking-tight text-slate-900">
+                        Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 font-extrabold">Pumping Solutions</span>
                     </h2>
-                    <p className="text-lg leading-relaxed" style={{ color: 'var(--dynamic-text-secondary)' }}>
+                    <p className="text-lg leading-relaxed text-slate-700">
                         From emergency repairs to turnkey installations, we provide end-to-end services
                         backed by 47 years of industry experience.
                     </p>
@@ -97,18 +97,18 @@ export default function ServicesGrid() {
                         <Link
                             key={index}
                             href={service.link}
-                            className="service-card group bg-white/10 backdrop-blur-xl p-8 rounded-2xl border border-white/20 hover:border-cyan-400/60 transition-all duration-300 hover:bg-white/15 hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500/30"
+                            className="service-card group bg-white/10 backdrop-blur-xl p-8 rounded-2xl border border-white/20 hover:border-blue-500/50 transition-all duration-300 hover:bg-white/15 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/20"
                         >
-                            <div className="w-14 h-14 bg-slate-900/50 backdrop-blur-sm rounded-xl flex items-center justify-center text-cyan-400 mb-6 border border-cyan-400/30 group-hover:bg-cyan-500 group-hover:text-white group-hover:border-cyan-400 transition-all duration-300 shadow-lg group-hover:shadow-cyan-500/50">
+                            <div className="w-14 h-14 bg-slate-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center text-blue-400 mb-6 border border-blue-400/30 group-hover:bg-blue-500 group-hover:text-white group-hover:border-blue-400 transition-all duration-300 shadow-lg group-hover:shadow-blue-500/50">
                                 <service.icon size={28} />
                             </div>
-                            <h3 className="text-xl font-bold mb-3 group-hover:text-cyan-300 transition-colors" style={{ color: 'var(--dynamic-text-primary)' }}>
+                            <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-blue-600 transition-colors">
                                 {service.title}
                             </h3>
-                            <p className="text-sm leading-relaxed mb-6 transition-colors" style={{ color: 'var(--dynamic-text-secondary)' }}>
+                            <p className="text-sm leading-relaxed mb-6 text-slate-700 transition-colors">
                                 {service.description}
                             </p>
-                            <span className="text-cyan-400 text-sm font-semibold flex items-center gap-2 group-hover:gap-3 group-hover:text-cyan-300 transition-all">
+                            <span className="text-blue-600 text-sm font-semibold flex items-center gap-2 group-hover:gap-3 group-hover:text-blue-700 transition-all">
                                 Learn more
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

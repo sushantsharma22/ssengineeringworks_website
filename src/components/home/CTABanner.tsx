@@ -12,14 +12,14 @@ export default function CTABanner() {
         gsap.registerPlugin(ScrollTrigger);
 
         const ctx = gsap.context(() => {
-            gsap.to(sectionRef.current, {
-                backgroundPosition: '100% 50%',
-                ease: 'none',
+            gsap.from('.cta-content', {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out',
                 scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: 'top bottom',
-                    end: 'bottom top',
-                    scrub: 1,
+                    start: 'top 80%',
                 },
             });
         }, sectionRef);
@@ -30,19 +30,16 @@ export default function CTABanner() {
     return (
         <section
             ref={sectionRef}
-            className="py-24 bg-transparent text-white text-center relative overflow-hidden"
+            // FIX 1: Set bg-transparent so the global background shows through
+            // FIX 2: Removed the absolute divs that were covering the background
+            className="py-24 text-white text-center relative overflow-hidden bg-transparent"
         >
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-slate-900/80 to-blue-900/80 z-0" />
-            {/* Decorative elements */}
-            <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-[url('/grid.svg')] bg-center" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-[100px]" />
 
-            <div className="container mx-auto px-6 relative z-10">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading tracking-tight" style={{ color: 'var(--dynamic-text-primary)' }}>
-                    Ready to Get <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Expert Pumping Service?</span>
+            <div className="container mx-auto px-6 relative z-10 cta-content">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading tracking-tight text-slate-900 dark:text-white">
+                    Ready to Get <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Expert Pumping Service?</span>
                 </h2>
-                <p className="text-xl mb-10 max-w-2xl mx-auto" style={{ color: 'var(--dynamic-text-secondary)' }}>
+                <p className="text-xl mb-10 max-w-2xl mx-auto text-slate-700 dark:text-slate-300 leading-relaxed">
                     Contact us today for a free consultation and service quote.
                     Our team is ready to assist you 24/7.
                 </p>
@@ -50,13 +47,14 @@ export default function CTABanner() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link
                         href="/contact"
-                        className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all shadow-lg shadow-blue-500/30 transform hover:-translate-y-1"
+                        className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-full transition-all shadow-lg shadow-blue-500/30 transform hover:-translate-y-1"
                     >
                         Get Free Quote
                     </Link>
                     <Link
                         href="/services"
-                        className="px-8 py-4 bg-white/5 border border-white/10 hover:bg-white/10 text-white font-bold rounded-xl transition-all backdrop-blur-sm hover:border-blue-500/30"
+                        // Adjusted button style to look good on any background (light or dark)
+                        className="px-8 py-4 bg-slate-900/10 dark:bg-white/10 border border-slate-900/20 dark:border-white/20 hover:bg-slate-900/20 dark:hover:bg-white/20 text-slate-900 dark:text-white font-bold rounded-full transition-all backdrop-blur-sm"
                     >
                         View All Services
                     </Link>

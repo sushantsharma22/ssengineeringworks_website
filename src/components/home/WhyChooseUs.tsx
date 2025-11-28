@@ -11,19 +11,19 @@ const features = [
         title: 'Pioneer Status',
         description: 'First comprehensive pumping machinery service provider in Himachal Pradesh since 1978.',
         icon: FaAward,
-        image: '/images/WhatsApp Image 2025-11-27 at 00.56.32.jpeg' // Placeholder
+        image: '/images/WhatsApp Image 2025-11-27 at 00.56.32.jpeg'
     },
     {
         title: 'Government Approved',
         description: 'Empaneled service provider for Jal Shakti Vibhag and other government departments.',
         icon: FaCheckCircle,
-        image: '/images/WhatsApp Image 2025-11-27 at 00.56.33.jpeg' // Placeholder
+        image: '/images/WhatsApp Image 2025-11-27 at 00.56.33.jpeg'
     },
     {
         title: 'Wide Coverage',
         description: 'Serving 6 districts: Una, Bilaspur, Hamirpur, Kangra, Shimla, and Solan.',
         icon: FaMapMarkerAlt,
-        image: '/images/WhatsApp Image 2025-11-27 at 00.56.34.jpeg' // Placeholder
+        image: '/images/WhatsApp Image 2025-11-27 at 00.56.34.jpeg'
     }
 ];
 
@@ -67,16 +67,18 @@ export default function WhyChooseUs() {
 
     return (
         <section ref={sectionRef} className="py-24 bg-transparent overflow-hidden relative">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-5 bg-[url('/grid.svg')] bg-center" />
+            {/* Smooth Gradient Background - NO GRID */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-50/30 to-transparent" />
 
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
                 <div className="text-center mb-20">
-                    <span className="inline-block py-1 px-3 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-bold tracking-wider uppercase text-xs mb-4">
-                        Our Advantage
+                    <span className="inline-block py-1.5 px-4 rounded-full bg-white/30 border border-white/40 text-slate-800 font-bold tracking-wider uppercase text-xs mb-4 backdrop-blur-sm shadow-sm">
+                        OUR ADVANTAGE
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-bold font-heading" style={{ color: 'var(--dynamic-text-primary)' }}>Why Choose S.S. Engineering?</h2>
-                    <p className="mt-4 max-w-2xl mx-auto text-lg" style={{ color: 'var(--dynamic-text-secondary)' }}>
+                    <h2 className="text-4xl md:text-5xl font-bold font-heading text-slate-900">
+                        Why Choose S.S. Engineering?
+                    </h2>
+                    <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-700">
                         We combine decades of experience with modern technical expertise to deliver unmatched service quality.
                     </p>
                 </div>
@@ -106,30 +108,44 @@ export default function WhyChooseUs() {
 
                             {/* Text Side */}
                             <div className="w-full lg:w-1/2 why-us-content">
-                                <div className="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center text-blue-400 mb-6 border border-blue-500/20 shadow-lg shadow-blue-500/10">
+                                <div className="w-16 h-16 bg-slate-800/60 backdrop-blur-sm rounded-2xl flex items-center justify-center text-blue-400 mb-6 border border-blue-400/30 shadow-lg shadow-blue-500/10">
                                     <feature.icon size={32} />
                                 </div>
-                                <h3 className="text-3xl font-bold mb-4" style={{ color: 'var(--dynamic-text-primary)' }}>{feature.title}</h3>
-                                <p className="text-lg leading-relaxed mb-8 border-l-2 border-blue-500/30 pl-4" style={{ color: 'var(--dynamic-text-secondary)' }}>
+                                <h3 className="text-3xl font-bold mb-4 text-slate-900">
+                                    {feature.title}
+                                </h3>
+                                <p className="text-lg leading-relaxed mb-8 border-l-2 border-blue-500/30 pl-4 text-slate-700">
                                     {feature.description}
                                 </p>
                                 <ul className="space-y-4">
                                     {index === 0 && (
                                         <>
-                                            <li className="flex items-center gap-3" style={{ color: 'var(--dynamic-text-secondary)' }}><FaCheckCircle className="text-emerald-400" /> 47 Years Combined Experience</li>
-                                            <li className="flex items-center gap-3" style={{ color: 'var(--dynamic-text-secondary)' }}><FaCheckCircle className="text-emerald-400" /> Established Legacy</li>
+                                            <li className="flex items-center gap-3 text-slate-700">
+                                                <FaCheckCircle className="text-emerald-500" /> 47 Years Combined Experience
+                                            </li>
+                                            <li className="flex items-center gap-3 text-slate-700">
+                                                <FaCheckCircle className="text-emerald-500" /> Established Legacy
+                                            </li>
                                         </>
                                     )}
                                     {index === 1 && (
                                         <>
-                                            <li className="flex items-center gap-3" style={{ color: 'var(--dynamic-text-secondary)' }}><FaCheckCircle className="text-emerald-400" /> Jal Shakti Vibhag Empaneled</li>
-                                            <li className="flex items-center gap-3" style={{ color: 'var(--dynamic-text-secondary)' }}><FaCheckCircle className="text-emerald-400" /> Shimla Jal Prabandhan Nigam</li>
+                                            <li className="flex items-center gap-3 text-slate-700">
+                                                <FaCheckCircle className="text-emerald-500" /> Jal Shakti Vibhag Empaneled
+                                            </li>
+                                            <li className="flex items-center gap-3 text-slate-700">
+                                                <FaCheckCircle className="text-emerald-500" /> Shimla Jal Prabandhan Nigam
+                                            </li>
                                         </>
                                     )}
                                     {index === 2 && (
                                         <>
-                                            <li className="flex items-center gap-3" style={{ color: 'var(--dynamic-text-secondary)' }}><FaCheckCircle className="text-emerald-400" /> Rapid Response Team</li>
-                                            <li className="flex items-center gap-3" style={{ color: 'var(--dynamic-text-secondary)' }}><FaCheckCircle className="text-emerald-400" /> Local Presence</li>
+                                            <li className="flex items-center gap-3 text-slate-700">
+                                                <FaCheckCircle className="text-emerald-500" /> Rapid Response Team
+                                            </li>
+                                            <li className="flex items-center gap-3 text-slate-700">
+                                                <FaCheckCircle className="text-emerald-500" /> Local Presence
+                                            </li>
                                         </>
                                     )}
                                 </ul>

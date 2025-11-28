@@ -55,38 +55,43 @@ export default function AboutSection() {
 
     return (
         <section ref={sectionRef} className="py-24 bg-transparent relative overflow-hidden">
-            {/* Background Gradients */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-slate-950 to-slate-950" />
+            {/* No background div here - lets the Sun Animation show through */}
 
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                     {/* Text Content */}
                     <div className="space-y-8 sticky top-32">
-                        <div className="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-sm font-bold tracking-wide uppercase">
+                        {/* Badge: Glass + Dark Text */}
+                        <div className="inline-block px-4 py-1.5 rounded-full bg-white/30 border border-white/40 text-slate-900 text-sm font-bold tracking-wide uppercase backdrop-blur-md shadow-sm">
                             About Us
                         </div>
-                        <h2 className="text-4xl lg:text-5xl font-bold font-heading leading-tight" style={{ color: 'var(--dynamic-text-primary)' }}>
+
+                        {/* Heading: Dark Text */}
+                        <h2 className="text-4xl lg:text-5xl font-bold font-heading leading-tight text-slate-900">
                             Building Trust Through <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Engineering Excellence</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-600 font-extrabold">
+                                Engineering Excellence
+                            </span>
                         </h2>
-                        <p className="text-lg leading-relaxed" style={{ color: 'var(--dynamic-text-secondary)' }}>
+
+                        {/* Paragraphs: Dark Grey Text for readability */}
+                        <p className="text-lg leading-relaxed text-slate-700 font-medium">
                             M.K Industries was founded in 1978 as the first comprehensive pumping machinery service provider in Himachal Pradesh.
                             In 2001, S.S. Engineering Works was established to carry forward this legacy, expanding our reach across
                             Una, Bilaspur, Hamirpur, Kangra, Shimla, and Solan districts.
                         </p>
-                        <p className="text-lg leading-relaxed" style={{ color: 'var(--dynamic-text-secondary)' }}>
+                        <p className="text-lg leading-relaxed text-slate-700 font-medium">
                             We take pride in being the pioneer service provider in the region, offering authorized KSB services
                             and maintaining a massive inventory of spare parts to ensure minimum downtime for our clients.
                         </p>
 
                         <div className="pt-4">
-                            <div className="relative h-64 w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-                                {/* Placeholder for workshop or team image */}
+                            <div className="relative h-80 w-full rounded-2xl overflow-hidden shadow-2xl border border-white/20">
                                 <Image
                                     src="/images/1000145912.jpg"
                                     alt="Workshop Team"
                                     fill
-                                    className="object-cover hover:scale-105 transition-transform duration-700 opacity-80"
+                                    className="object-cover hover:scale-105 transition-transform duration-700"
                                 />
                             </div>
                         </div>
@@ -94,23 +99,30 @@ export default function AboutSection() {
 
                     {/* Timeline */}
                     <div ref={timelineRef} className="relative pl-8 lg:pl-0">
-                        {/* Center Line */}
-                        <div className="absolute left-0 lg:left-1/2 top-0 bottom-0 w-0.5 bg-slate-800 timeline-line origin-top" />
+                        {/* Center Line: Semi-transparent dark line */}
+                        <div className="absolute left-0 lg:left-1/2 top-0 bottom-0 w-0.5 bg-slate-900/20 timeline-line origin-top" />
 
                         <div className="space-y-12">
                             {timelineEvents.map((event, index) => (
                                 <div key={event.year} className={`timeline-item relative flex flex-col lg:flex-row gap-8 ${index % 2 === 0 ? 'lg:flex-row-reverse' : ''
                                     }`}>
                                     {/* Dot */}
-                                    <div className="absolute left-[-5px] lg:left-1/2 top-0 w-3 h-3 bg-blue-500 rounded-full -translate-x-1/2 ring-4 ring-slate-950 shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
+                                    <div className="absolute left-[-5px] lg:left-1/2 top-0 w-3 h-3 bg-blue-600 rounded-full -translate-x-1/2 ring-4 ring-white/50 shadow-[0_0_10px_rgba(37,99,235,0.4)]" />
 
                                     {/* Content */}
                                     <div className="lg:w-1/2 pt-1">
-                                        <div className={`bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-all hover:border-blue-500/30 ${index % 2 === 0 ? 'lg:text-right' : ''
+                                        {/* GLASS CARD: White/20 bg + Blur + Dark Text */}
+                                        <div className={`bg-white/20 backdrop-blur-xl p-6 rounded-xl border border-white/30 shadow-lg hover:bg-white/30 transition-all hover:shadow-xl ${index % 2 === 0 ? 'lg:text-right' : ''
                                             }`}>
-                                            <span className="text-4xl font-bold block mb-2 font-mono" style={{ color: 'var(--dynamic-accent)' }}>{event.year}</span>
-                                            <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--dynamic-text-primary)' }}>{event.title}</h3>
-                                            <p className="text-sm" style={{ color: 'var(--dynamic-text-secondary)' }}>{event.description}</p>
+                                            <span className="text-4xl font-bold block mb-2 font-mono text-blue-700">
+                                                {event.year}
+                                            </span>
+                                            <h3 className="text-xl font-bold mb-2 text-slate-900">
+                                                {event.title}
+                                            </h3>
+                                            <p className="text-sm text-slate-800 font-medium">
+                                                {event.description}
+                                            </p>
                                         </div>
                                     </div>
                                     <div className="lg:w-1/2" />
