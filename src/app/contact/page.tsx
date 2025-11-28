@@ -250,14 +250,16 @@ export default function ContactPage() {
                             </div>
                         </div>
 
-                        <div className="bg-slate-900 p-2 rounded-2xl shadow-lg border border-white/10">
+                        <div className="bg-slate-900 p-2 rounded-2xl shadow-lg border border-white/10 h-[320px]">
                             <iframe
-                                src="https://maps.google.com/maps?q=S.S.+Engineering+Works%2C+Near+Bus+Stand%2C+Hamirpur+Road%2C+Una%2C+Himachal+Pradesh&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27223.541342568955!2d76.24824343555362!3d31.470763254261477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391ad16b29d78e4b%3A0xf53e84b80ce9c9eb!2sS.S.%20Engg%20Works!5e0!3m2!1sen!2sca!4v1764316533015!5m2!1sen!2sca"
                                 width="100%"
-                                height="300"
+                                height="100%"
                                 style={{ border: 0, borderRadius: '1rem', filter: 'invert(90%) hue-rotate(180deg)' }}
                                 allowFullScreen
                                 loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                title="S.S. Engineering Works Location"
                             />
                         </div>
                     </motion.div>
