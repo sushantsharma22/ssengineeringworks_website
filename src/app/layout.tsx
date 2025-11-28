@@ -12,7 +12,7 @@ const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mon
 
 export const metadata: Metadata = {
   title: "S.S. Engineering Works | Expert Pumping Machinery Services",
-  description: "Authorized KSB Service Center providing comprehensive repair, installation, and maintenance for pumping machinery in Himachal Pradesh since 1978.",
+  description: "Authorized KSB Service Center providing comprehensive repair, installation, and maintenance for pumping machinery in Himachal Pradesh since 1970.",
 };
 
 export default function RootLayout({
