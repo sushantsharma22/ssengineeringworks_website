@@ -78,7 +78,7 @@ export default function AboutSection() {
 
                         {/* Paragraphs: Dark Grey Text for readability */}
                         <p className="text-lg leading-relaxed text-slate-700 font-medium">
-                            M.K Industries was founded in 1978 as the first comprehensive pumping machinery service provider in Himachal Pradesh.
+                            M.K Industries was founded in 1970 as the first comprehensive pumping machinery service provider in Himachal Pradesh.
                             In 2001, S.S. Engineering Works was established to carry forward this legacy, expanding our reach across
                             Una, Bilaspur, Hamirpur, Kangra, Shimla, and Solan districts.
                         </p>
