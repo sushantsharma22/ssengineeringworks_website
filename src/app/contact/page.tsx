@@ -234,7 +234,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 className="font-bold text-white mb-1">Email Address</h3>
-                                        <p className="text-slate-400">ssewuna@gmail.com</p>
+                                        <a href="mailto:ssewuna@gmail.com" className="text-slate-400 hover:text-blue-400 transition-colors">ssewuna@gmail.com</a>
                                     </div>
                                 </div>
 
