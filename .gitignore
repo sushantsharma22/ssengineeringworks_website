@@ -11,7 +11,7 @@
 !.yarn/versions
 
 # testing
-/coverage
+# /coverage (commented out for GitHub Pages deployment)
 
 # next.js
 /.next/

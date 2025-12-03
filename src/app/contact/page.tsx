@@ -20,8 +20,20 @@ export default function ContactPage() {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        const subject = encodeURIComponent('New Inquiry from Website');
+        const body = encodeURIComponent(
+            `Name: ${formState.name}\n` +
+            `Phone: ${formState.phone}\n` +
+            `Email: ${formState.email}\n` +
+            `District: ${formState.district}\n` +
+            `Service: ${formState.service}\n\n` +
+            `Message:\n${formState.message}`
+        );
+
+        window.location.href = `mailto:ssewuna@gmail.com?subject=${subject}&body=${body}`;
+
+        // Simulate short delay for UI feedback
+        await new Promise(resolve => setTimeout(resolve, 1000));
 
         setIsSubmitting(false);
         setIsSuccess(true);
@@ -37,7 +49,7 @@ export default function ContactPage() {
             {/* Background Gradients */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-950 to-slate-950" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-indigo-900/20 via-slate-950 to-slate-950" />
-            <div className="absolute inset-0 opacity-20 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+            <div className="absolute inset-0 opacity-20 bg-[url('/ssengineeringworks_website/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
 
             {/* Header */}
             <div className="relative z-10 mb-12">

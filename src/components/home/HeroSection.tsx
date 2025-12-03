@@ -139,7 +139,7 @@ export default function HeroSection() {
                     {/* Logo Image */}
                     <div className="relative w-[500px] h-[500px]">
                         <Image
-                            src="/images/1000146046.jpg"
+                            src="/ssengineeringworks_website/images/1000146046.jpg"
                             alt="S.S. Engineering Works"
                             fill
                             className="object-contain drop-shadow-2xl"

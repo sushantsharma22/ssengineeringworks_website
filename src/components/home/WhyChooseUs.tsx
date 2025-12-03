@@ -11,19 +11,19 @@ const features = [
         title: 'Pioneer Status',
         description: 'First comprehensive pumping machinery service provider in Himachal Pradesh since 1970.',
         icon: FaAward,
-        image: '/images/1764305046059~2.jpg'
+        image: '/ssengineeringworks_website/images/1764305046059~2.jpg'
     },
     {
         title: 'Government Approved',
         description: 'Empaneled service provider for Jal Shakti Vibhag and other government departments.',
         icon: FaCheckCircle,
-        image: '/images/1000146118.jpg'
+        image: '/ssengineeringworks_website/images/1000146118.jpg'
     },
     {
         title: 'Wide Coverage',
         description: 'Serving 6+ districts: Una, Bilaspur, Hamirpur, Kangra, Shimla, and Solan.',
         icon: FaMapMarkerAlt,
-        image: '/images/1000146120.jpg'
+        image: '/ssengineeringworks_website/images/1000146120.jpg'
     }
 ];
 

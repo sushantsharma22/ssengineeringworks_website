@@ -90,7 +90,7 @@ export default function AboutSection() {
                         <div className="pt-4">
                             <div className="relative h-80 w-full rounded-2xl overflow-hidden shadow-2xl border border-white/20">
                                 <Image
-                                    src="/images/1000145912.jpg"
+                                    src="/ssengineeringworks_website/images/1000145912.jpg"
                                     alt="Workshop Team"
                                     fill
                                     className="object-cover hover:scale-105 transition-transform duration-700"
