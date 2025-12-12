@@ -42,21 +42,6 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the website.
-
-## Deployment
-
-### Deploy to Vercel (Recommended)
-
-1. Push your code to GitHub (already done ✅)
-2. Go to [vercel.com](https://vercel.com)
-3. Click "Add New Project"
-4. Import your GitHub repository: `sushantsharma22/ssengineeringworks_website`
-5. Vercel will auto-detect Next.js and configure everything
-6. Click "Deploy"
-
-Your site will be live at: `https://ssengineeringworks-website.vercel.app`
-
 ### Custom Domain (Optional)
 
 After deployment, you can add your custom domain:
@@ -93,20 +78,6 @@ public/
 - **ServicesGrid.tsx** - Service offerings
 - **WhyChooseUs.tsx** - Feature highlights
 
-## Color System
-
-The website uses a dynamic color system that changes based on scroll position:
-
-- **Dark backgrounds** (0-10%, 90-100%): White text, Light cyan accents
-- **Light backgrounds** (10-90%): Deep navy text, Dark cyan accents
-- **Gradients**: Smooth transition from navy/yellow → blue/white → navy/orange
-
 ## License
 
 © 2025 SS Engineering Works. All rights reserved.
-
-## Contact
-
-- **Email**: contact@ssengineeringworks.com
-- **Phone**: +91-XXXXXXXXXX
-- **Location**: Himachal Pradesh, India
