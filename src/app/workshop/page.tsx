@@ -3,60 +3,67 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaCheckCircle } from 'react-icons/fa';
+import { getAssetPath } from '@/lib/config';
 
-// UPDATED GALLERY LIST
-const allGalleryImages = [
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.30 (1).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.30.jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.31 (1).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.31 (2).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.31.jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.32 (1).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.32 (2).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.32.jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.33 (1).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.33 (2).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.33.jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.34 (1).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.34 (2).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.34.jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.35 (1).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.35 (2).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.35.jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.36 (1).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.36.jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.37 (1).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.37 (2).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.37.jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.38 (1).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.38 (2).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.38.jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.39 (1).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.39 (2).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.39.jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.40 (1).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.40 (2).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.40.jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.41 (1).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.41 (2).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.41.jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.42 (1).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.42 (2).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.42.jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.43 (1).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.43 (2).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.43.jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.44 (1).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.44 (2).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.44.jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.45 (1).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.45 (2).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.45.jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.57.26.jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.58.02 (1).jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.58.02.jpeg', alt: '' },
-    { src: '/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.58.03.jpeg', alt: '' },
+// UPDATED GALLERY LIST - using relative paths, getAssetPath will add basePath dynamically
+const imageNames = [
+    'WhatsApp Image 2025-11-27 at 00.56.30 (1).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.30.jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.31 (1).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.31 (2).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.31.jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.32 (1).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.32 (2).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.32.jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.33 (1).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.33 (2).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.33.jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.34 (1).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.34 (2).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.34.jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.35 (1).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.35 (2).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.35.jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.36 (1).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.36.jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.37 (1).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.37 (2).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.37.jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.38 (1).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.38 (2).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.38.jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.39 (1).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.39 (2).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.39.jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.40 (1).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.40 (2).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.40.jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.41 (1).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.41 (2).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.41.jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.42 (1).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.42 (2).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.42.jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.43 (1).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.43 (2).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.43.jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.44 (1).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.44 (2).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.44.jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.45 (1).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.45 (2).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.56.45.jpeg',
+    'WhatsApp Image 2025-11-27 at 00.57.26.jpeg',
+    'WhatsApp Image 2025-11-27 at 00.58.02 (1).jpeg',
+    'WhatsApp Image 2025-11-27 at 00.58.02.jpeg',
+    'WhatsApp Image 2025-11-27 at 00.58.03.jpeg',
 ];
+
+const allGalleryImages = imageNames.map(name => ({
+    src: getAssetPath(`/images/${name}`),
+    alt: ''
+}));
+
 
 export default function WorkshopPage() {
     return (
@@ -149,7 +156,7 @@ export default function WorkshopPage() {
                             >
                                 <div className="relative h-[500px] w-full rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-slate-800">
                                     <Image
-                                        src="/ssengineeringworks_website/images/WhatsApp Image 2025-11-27 at 00.56.36.jpeg" // Using group photo here
+                                        src={getAssetPath('/images/WhatsApp Image 2025-11-27 at 00.56.36.jpeg')}
                                         alt="Technical Team Group Photo"
                                         fill
                                         sizes="(max-width: 1200px) 100vw, 50vw"

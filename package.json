@@ -6,9 +6,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:github": "NEXT_PUBLIC_DEPLOY_TARGET=github-pages next build",
     "start": "next start",
     "lint": "eslint",
-    "predeploy": "npm run build && touch out/.nojekyll",
+    "predeploy": "npm run build:github && touch out/.nojekyll",
     "deploy": "gh-pages -d out --dotfiles --add"
   },
   "dependencies": {

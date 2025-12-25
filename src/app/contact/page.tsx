@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaCheckCircle } from 'react-icons/fa';
+import { getAssetPath } from '@/lib/config';
 
 export default function ContactPage() {
     const [formState, setFormState] = useState({
@@ -49,7 +50,7 @@ export default function ContactPage() {
             {/* Background Gradients */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-950 to-slate-950" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-indigo-900/20 via-slate-950 to-slate-950" />
-            <div className="absolute inset-0 opacity-20 bg-[url('/ssengineeringworks_website/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+            <div className="absolute inset-0 opacity-20 bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" style={{ backgroundImage: `url('${getAssetPath('/grid.svg')}')` }} />
 
             {/* Header */}
             <div className="relative z-10 mb-12">
@@ -80,12 +81,21 @@ export default function ContactPage() {
                                 animate={{ scale: 1, opacity: 1 }}
                                 className="flex flex-col items-center justify-center py-12 text-center"
                             >
-                                <div className="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center text-emerald-400 mb-6 border border-emerald-500/30">
-                                    <FaCheckCircle size={40} />
+                                <div className="w-20 h-20 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 mb-6 border border-blue-500/30">
+                                    <FaEnvelope size={40} />
                                 </div>
-                                <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
-                                <p className="text-slate-400">
-                                    Thank you for contacting us. Our team will get back to you shortly.
+                                <h3 className="text-2xl font-bold text-white mb-2">Email Client Opened!</h3>
+                                <p className="text-slate-400 mb-2">
+                                    Your email client has been opened with a pre-filled message.
+                                </p>
+                                <p className="text-blue-400 font-semibold text-lg mb-1">
+                                    📧 Please click "Send" in your email to complete the inquiry.
+                                </p>
+                                <p className="text-slate-500 text-sm">
+                                    If your email didn't open, you can manually email us at{' '}
+                                    <a href="mailto:ssewuna@gmail.com" className="text-blue-400 hover:text-blue-300 underline">
+                                        ssewuna@gmail.com
+                                    </a>
                                 </p>
                                 <button
                                     onClick={() => setIsSuccess(false)}

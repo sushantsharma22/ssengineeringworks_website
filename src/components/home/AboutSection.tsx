@@ -5,6 +5,7 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { getAssetPath } from '@/lib/config';
 
 const timelineEvents = [
     { year: '1970', title: 'M.K Industries Founded', description: 'Started as the first comprehensive pumping machinery service provider in HP.' },
@@ -90,7 +91,7 @@ export default function AboutSection() {
                         <div className="pt-4">
                             <div className="relative h-80 w-full rounded-2xl overflow-hidden shadow-2xl border border-white/20">
                                 <Image
-                                    src="/ssengineeringworks_website/images/1000145912.jpg"
+                                    src={getAssetPath('/images/1000145912.jpg')}
                                     alt="Workshop Team"
                                     fill
                                     className="object-cover hover:scale-105 transition-transform duration-700"

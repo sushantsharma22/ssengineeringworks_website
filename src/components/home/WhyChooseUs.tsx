@@ -5,25 +5,26 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaAward, FaCheckCircle, FaMapMarkerAlt, FaHandshake, FaBolt, FaUserCog } from 'react-icons/fa';
+import { getAssetPath } from '@/lib/config';
 
 const features = [
     {
         title: 'Pioneer Status',
         description: 'First comprehensive pumping machinery service provider in Himachal Pradesh since 1970.',
         icon: FaAward,
-        image: '/ssengineeringworks_website/images/1764305046059~2.jpg'
+        image: getAssetPath('/images/1764305046059~2.jpg')
     },
     {
         title: 'Government Approved',
         description: 'Empaneled service provider for Jal Shakti Vibhag and other government departments.',
         icon: FaCheckCircle,
-        image: '/ssengineeringworks_website/images/1000146118.jpg'
+        image: getAssetPath('/images/1000146118.jpg')
     },
     {
         title: 'Wide Coverage',
         description: 'Serving 6+ districts: Una, Bilaspur, Hamirpur, Kangra, Shimla, and Solan.',
         icon: FaMapMarkerAlt,
-        image: '/ssengineeringworks_website/images/1000146120.jpg'
+        image: getAssetPath('/images/1000146120.jpg')
     }
 ];
 

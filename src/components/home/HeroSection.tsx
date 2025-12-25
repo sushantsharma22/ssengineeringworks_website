@@ -6,6 +6,7 @@ import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaArrowDown } from 'react-icons/fa';
+import { getAssetPath } from '@/lib/config';
 
 export default function HeroSection() {
     const heroRef = useRef<HTMLDivElement>(null);
@@ -91,7 +92,7 @@ export default function HeroSection() {
                             Get Service Quote
                         </Link>
                         <Link
-                            href="/coverage"
+                            href="/network"
                             className="px-8 py-4 bg-slate-800/50 hover:bg-slate-700/50 text-white font-bold rounded-full transition-all backdrop-blur-sm border border-white/10 text-center"
                         >
                             View Coverage Areas
@@ -139,7 +140,7 @@ export default function HeroSection() {
                     {/* Logo Image */}
                     <div className="relative w-[500px] h-[500px]">
                         <Image
-                            src="/ssengineeringworks_website/images/1000146046.jpg"
+                            src={getAssetPath('/images/1000146046.jpg')}
                             alt="S.S. Engineering Works"
                             fill
                             className="object-contain drop-shadow-2xl"

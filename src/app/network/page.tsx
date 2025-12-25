@@ -24,7 +24,7 @@ export default function CoveragePage() {
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
                 <div className="text-center mb-16">
                     <h1 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6 tracking-tight">
-                        Service <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Coverage</span>
+                        Service <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Network</span>
                     </h1>
                     <p className="text-xl text-slate-400 max-w-2xl mx-auto">
                         We serve 6+ major districts across Himachal Pradesh with rapid response teams and on-site support.

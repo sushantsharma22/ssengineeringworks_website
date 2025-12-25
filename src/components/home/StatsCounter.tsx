@@ -4,6 +4,7 @@ import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaCalendarAlt, FaUsers, FaMapMarkedAlt, FaBox } from 'react-icons/fa';
+import { getAssetPath } from '@/lib/config';
 
 const stats = [
     { icon: FaCalendarAlt, value: 55, label: 'Years Experience', suffix: '+' },
@@ -70,7 +71,7 @@ export default function StatsCounter() {
     return (
         <section ref={sectionRef} className="py-12 md:py-20 bg-white/10 backdrop-blur-sm relative overflow-hidden border-y border-white/20">
             {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-5 bg-[url('/ssengineeringworks_website/grid.svg')] bg-center" />
+            <div className="absolute inset-0 opacity-5 bg-center" style={{ backgroundImage: `url('${getAssetPath('/grid.svg')}')` }} />
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-900/5 to-transparent" />
 
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
