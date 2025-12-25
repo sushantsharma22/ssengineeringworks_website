@@ -144,30 +144,45 @@ export default function ServicesPage() {
     const [openId, setOpenId] = useState<string | null>('repair');
 
     useEffect(() => {
-        // Function to handle hash changes
-        const handleHashChange = () => {
+        // Function to handle hash and open accordion + scroll
+        const handleHashNavigation = () => {
             if (typeof window !== 'undefined' && window.location.hash) {
                 const id = window.location.hash.replace('#', '');
-                setOpenId(id);
-                // Scroll to element - use 'start' to show from top
-                setTimeout(() => {
-                    const element = document.getElementById(id);
-                    if (element) {
-                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                }, 100);
+                
+                // Check if this is a valid service id
+                const validIds = ['repair', 'installation', 'ksb', 'maintenance', 'parts', 'emergency'];
+                if (validIds.includes(id)) {
+                    // Open the accordion
+                    setOpenId(id);
+                    
+                    // Wait for accordion to open, then scroll
+                    setTimeout(() => {
+                        const element = document.getElementById(id);
+                        if (element) {
+                            // Calculate offset for navbar (80px height + 20px padding)
+                            const navbarOffset = 100;
+                            const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+                            const offsetPosition = elementPosition - navbarOffset;
+                            
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }, 150);
+                }
             }
         };
 
-        // Check hash on mount
-        handleHashChange();
+        // Check hash on initial mount (when coming from footer links)
+        handleHashNavigation();
 
         // Listen for hash changes (when clicking links while already on page)
-        window.addEventListener('hashchange', handleHashChange);
+        window.addEventListener('hashchange', handleHashNavigation);
 
         // Cleanup listener
         return () => {
-            window.removeEventListener('hashchange', handleHashChange);
+            window.removeEventListener('hashchange', handleHashNavigation);
         };
     }, []);
 
