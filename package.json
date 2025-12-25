@@ -2,15 +2,12 @@
   "name": "ssengineeringworks_website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sushantsharma22.github.io/ssengineeringworks_website",
+  "homepage": "https://ssengineeringworkshp.com",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:github": "NEXT_PUBLIC_DEPLOY_TARGET=github-pages next build",
     "start": "next start",
-    "lint": "eslint",
-    "predeploy": "npm run build:github && touch out/.nojekyll",
-    "deploy": "gh-pages -d out --dotfiles --add"
+    "lint": "eslint"
   },
   "dependencies": {
     "framer-motion": "^12.23.24",

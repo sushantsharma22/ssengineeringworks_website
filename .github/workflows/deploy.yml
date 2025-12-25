@@ -37,12 +37,13 @@ jobs:
         run: npm ci
       
       - name: Build for GitHub Pages
-        run: npm run build:github
-        env:
-          NEXT_PUBLIC_DEPLOY_TARGET: github-pages
+        run: npm run build
       
       - name: Add .nojekyll file
         run: touch out/.nojekyll
+      
+      - name: Add CNAME file
+        run: echo "ssengineeringworkshp.com" > out/CNAME
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
