@@ -144,18 +144,31 @@ export default function ServicesPage() {
     const [openId, setOpenId] = useState<string | null>('repair');
 
     useEffect(() => {
-        // Check hash on mount to open correct section
-        if (typeof window !== 'undefined' && window.location.hash) {
-            const id = window.location.hash.replace('#', '');
-            setOpenId(id);
-            // Scroll to element
-            setTimeout(() => {
-                const element = document.getElementById(id);
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            }, 100);
-        }
+        // Function to handle hash changes
+        const handleHashChange = () => {
+            if (typeof window !== 'undefined' && window.location.hash) {
+                const id = window.location.hash.replace('#', '');
+                setOpenId(id);
+                // Scroll to element - use 'start' to show from top
+                setTimeout(() => {
+                    const element = document.getElementById(id);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 100);
+            }
+        };
+
+        // Check hash on mount
+        handleHashChange();
+
+        // Listen for hash changes (when clicking links while already on page)
+        window.addEventListener('hashchange', handleHashChange);
+
+        // Cleanup listener
+        return () => {
+            window.removeEventListener('hashchange', handleHashChange);
+        };
     }, []);
 
     return (
