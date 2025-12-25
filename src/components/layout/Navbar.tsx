@@ -10,11 +10,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services' },
-    { name: 'Network', href: '/network' },
-    { name: 'Workshop', href: '/workshop' },
-    { name: 'Clients', href: '/clients' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Services', href: '/services/' },
+    { name: 'Network', href: '/network/' },
+    { name: 'Workshop', href: '/workshop/' },
+    { name: 'Clients', href: '/clients/' },
+    { name: 'Contact', href: '/contact/' },
 ];
 
 export default function Navbar() {
@@ -126,7 +126,7 @@ export default function Navbar() {
                 {/* CTA Button */}
                 <div className="hidden lg:block">
                     <Link
-                        href="/contact"
+                        href="/contact/"
                         // Button: Glass style, no border, blends with background
                         className="px-6 py-2.5 bg-white/10 hover:bg-blue-600 text-white text-sm font-semibold rounded-full transition-all shadow-lg backdrop-blur-sm hover:scale-105"
                     >
@@ -172,7 +172,7 @@ export default function Navbar() {
                             </Link>
                         ))}
                         <Link
-                            href="/contact"
+                            href="/contact/"
                             onClick={() => setIsOpen(false)}
                             className="mt-4 px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold rounded-full transition-all shadow-lg"
                         >

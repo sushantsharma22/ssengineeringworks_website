@@ -39,7 +39,7 @@ export default function Footer() {
                                 {['Home', 'Services', 'Network', 'Workshop', 'Clients', 'Contact'].map((item) => (
                                     <li key={item}>
                                         <Link
-                                            href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`}
+                                            href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}/`}
                                             className="text-[10px] md:text-sm hover:text-secondary transition-colors whitespace-nowrap"
                                         >
                                             {item}
@@ -53,12 +53,12 @@ export default function Footer() {
                         <div>
                             <h3 className="text-white font-bold text-sm md:text-lg mb-3 md:mb-6">Services</h3>
                             <ul className="space-y-1.5 md:space-y-3">
-                                <li><Link href="/services#repair" className="text-[10px] md:text-sm hover:text-secondary transition-colors whitespace-nowrap">Repair</Link></li>
-                                <li><Link href="/services#ksb" className="text-[10px] md:text-sm hover:text-secondary transition-colors whitespace-nowrap">KSB Service</Link></li>
-                                <li><Link href="/services#installation" className="text-[10px] md:text-sm hover:text-secondary transition-colors whitespace-nowrap">Installation</Link></li>
-                                <li><Link href="/services#maintenance" className="text-[10px] md:text-sm hover:text-secondary transition-colors whitespace-nowrap">Maintenance</Link></li>
-                                <li><Link href="/services#parts" className="text-[10px] md:text-sm hover:text-secondary transition-colors whitespace-nowrap">Spare Parts</Link></li>
-                                <li><Link href="/services#emergency" className="text-[10px] md:text-sm hover:text-secondary transition-colors whitespace-nowrap">Emergency</Link></li>
+                                <li><Link href="/services/#repair" className="text-[10px] md:text-sm hover:text-secondary transition-colors whitespace-nowrap">Repair</Link></li>
+                                <li><Link href="/services/#ksb" className="text-[10px] md:text-sm hover:text-secondary transition-colors whitespace-nowrap">KSB Service</Link></li>
+                                <li><Link href="/services/#installation" className="text-[10px] md:text-sm hover:text-secondary transition-colors whitespace-nowrap">Installation</Link></li>
+                                <li><Link href="/services/#maintenance" className="text-[10px] md:text-sm hover:text-secondary transition-colors whitespace-nowrap">Maintenance</Link></li>
+                                <li><Link href="/services/#parts" className="text-[10px] md:text-sm hover:text-secondary transition-colors whitespace-nowrap">Spare Parts</Link></li>
+                                <li><Link href="/services/#emergency" className="text-[10px] md:text-sm hover:text-secondary transition-colors whitespace-nowrap">Emergency</Link></li>
                             </ul>
                         </div>
 
@@ -97,11 +97,11 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="border-t border-slate-800 pt-6 flex flex-col items-center gap-2">
                     <p className="text-[10px] text-gray-500 text-center">
-                        &copy; 2025 S.S. Engineering Works. All rights reserved.
+                        &copy; {currentYear} S.S. Engineering Works. All rights reserved.
                     </p>
                     <div className="flex gap-4">
-                        <Link href="/privacy" className="text-[9px] text-gray-600 hover:text-white transition-colors">Privacy Policy</Link>
-                        <Link href="/terms" className="text-[9px] text-gray-600 hover:text-white transition-colors">Terms of Service</Link>
+                        <Link href="/privacy/" className="text-[9px] text-gray-600 hover:text-white transition-colors">Privacy Policy</Link>
+                        <Link href="/terms/" className="text-[9px] text-gray-600 hover:text-white transition-colors">Terms of Service</Link>
                     </div>
                 </div>
             </div>

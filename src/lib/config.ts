@@ -1,17 +1,13 @@
-// Configuration for handling different deployment environments
-// Works for both Vercel and GitHub Pages
+// Configuration for S.S. Engineering Works website
+// Deployed on GitHub Pages with custom domain: ssengineeringworkshp.com
 
-const isGitHubPages = process.env.NEXT_PUBLIC_DEPLOY_TARGET === 'github-pages';
+export const SITE_URL = 'https://ssengineeringworkshp.com';
 
-export const BASE_PATH = isGitHubPages ? '/ssengineeringworks_website' : '';
+// No basePath needed with custom domain (root-level routing)
+export const BASE_PATH = '';
 
-export const SITE_URL = isGitHubPages 
-  ? 'https://sushantsharma22.github.io/ssengineeringworks_website'
-  : process.env.NEXT_PUBLIC_SITE_URL || 'https://ssengineeringworks.vercel.app';
-
-// Helper function to get asset paths
+// Helper function to get asset paths (simplified for custom domain)
 export function getAssetPath(path: string): string {
-  // Remove leading slash if present for consistency
-  const cleanPath = path.startsWith('/') ? path : `/${path}`;
-  return `${BASE_PATH}${cleanPath}`;
+  // Ensure path starts with /
+  return path.startsWith('/') ? path : `/${path}`;
 }
